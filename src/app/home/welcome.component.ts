@@ -16,6 +16,27 @@ export class WelcomeComponent implements OnInit {
     this.user = userService.getUser();
   }
 
+  test() {
+    console.log("Here is a list of the entire API");
+    console.log(gapi.client.word_bait);
+    gapi.client.word_bait.get_games().execute(
+        function (resp) {
+            if (resp.result) {
+              console.log(resp);
+            }
+        });
+  }
+
   ngOnInit() {
+
+    var apisToLoad;
+    var callback = function () {
+        if (--apisToLoad === 0) {
+            // google.devrel.samples.hello.enableButtons();
+        }
+    };
+
+    apisToLoad = 1; // must match number of calls to gapi.client.load()
+    gapi.client.load('word_bait', 'v1', callback, 'https://gaming-140419.appspot.com/_ah/api/');
   }
 }

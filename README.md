@@ -1,6 +1,6 @@
 ## Word Bait
 
-This is the initial attempt with Node for the Rentatize application. Need to ensure that you have Postgres installed. Create a database, with a user whose credentials you have access to. Use `example.env` as a template to create your `.env` file. Place your credentials in there, this will facilitate your apps ability to access the database.
+This is the initial attempt with Node for the Word Bait application. Need to ensure that you have Postgres installed. Create a database, with a user whose credentials you have access to. Use `example.env` as a template to create your `.env` file. Place your credentials in there, this will facilitate your apps ability to access the database.
 
 To start, do an `npm install`, followed by an `npm build` to ensure you have the latest node modules. Then do `node server.js`
 

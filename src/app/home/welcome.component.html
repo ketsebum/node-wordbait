@@ -3,4 +3,5 @@
   <ul>
     <li *ngIf="user">{{user.name}}</li>
   </ul>
+  <button [disabled]="loading" (click)="test()" class="btn btn-success">test</button>
 </div>
