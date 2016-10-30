@@ -33,8 +33,6 @@ It is recommended to setup gulp to assist with the build/test of the UI. Here ar
 
 Look here to checkout the table descriptions in JavaScript.
 
-Here is our [Database Schema](http://code.rentatize.com/core/main/wikis/database-design).
-
 If you want to create your own migration, please refer to the documentation here: http://knexjs.org/#Migrations
 
 ### Models

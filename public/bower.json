@@ -1,9 +1,9 @@
 {
-  "name": "node-rental",
+  "name": "Word Bait",
   "authors": [
     "Ketse <snunleys@gmail.com>"
   ],
-  "description": "Rental Manager",
+  "description": "Word Bait",
   "main": "index.html",
   "license": "ISC",
   "homepage": "",
