@@ -9,7 +9,6 @@ exports.up = function(knex, Promise) {
       table.dateTime('passwordResetExpires');
       // table.string('gender');
       table.string('location');
-      table.string('location');
       table.string('website');
       table.string('picture');
       table.string('facebook');
