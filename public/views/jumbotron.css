@@ -1,0 +1,17 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.main-image {
+	min-height: 400px;
+	min-width: 1200px;
+	background:url("suburban-houses.jpg") no-repeat center center;
+	background-color: #eee;
+	color: white;
+}
+
+.near-top {
+	margin-top: 0;
+}

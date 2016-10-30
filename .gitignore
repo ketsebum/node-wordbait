@@ -1,0 +1,5 @@
+.env
+app/test/coverage/
+dist/
+
+# dependencies
