@@ -9,7 +9,6 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { HeaderComponent } from './header/index';
-import { MenuComponent } from './menu/index';
 import { FooterComponent } from './footer/index';
 import { routing } from './app.routing';
 
@@ -18,9 +17,6 @@ import { AuthenticationService, UserService } from './_services/index';
 import { LoginComponent } from './login/index';
 import { SignUpComponent } from './signup/index';
 import { WelcomeComponent } from './home/index';
-
-/* Feature Modules */
-// import { ProductModule } from './products/product.module';
 
 @NgModule({
   imports: [
@@ -33,7 +29,6 @@ import { WelcomeComponent } from './home/index';
     AppComponent,
     LoginComponent,
     HeaderComponent,
-    MenuComponent,
     FooterComponent,
     SignUpComponent,
     WelcomeComponent
