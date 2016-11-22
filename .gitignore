@@ -2,5 +2,5 @@
 app/test/coverage/
 dist/
 node_modules/
-
+.idea/
 # dependencies

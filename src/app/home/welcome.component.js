@@ -17,7 +17,23 @@ var WelcomeComponent = (function () {
         this.token = JSON.parse(localStorage.getItem('currentUser')).token;
         this.user = userService.getUser();
     }
+    WelcomeComponent.prototype.test = function () {
+        console.log("Here is a list of the entire API");
+        console.log(gapi.client.word_bait);
+        gapi.client.word_bait.get_games().execute(function (resp) {
+            if (resp.result) {
+                console.log(resp);
+            }
+        });
+    };
     WelcomeComponent.prototype.ngOnInit = function () {
+        var apisToLoad;
+        var callback = function () {
+            if (--apisToLoad === 0) {
+            }
+        };
+        apisToLoad = 1; // must match number of calls to gapi.client.load()
+        gapi.client.load('word_bait', 'v1', callback, 'https://gaming-140419.appspot.com/_ah/api/');
     };
     WelcomeComponent = __decorate([
         core_1.Component({

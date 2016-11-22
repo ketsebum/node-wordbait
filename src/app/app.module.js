@@ -17,16 +17,13 @@ var http_1 = require('@angular/http');
 // import { MockBackend, MockConnection } from '@angular/http/testing';
 var app_component_1 = require('./app.component');
 var index_1 = require('./header/index');
-var index_2 = require('./menu/index');
-var index_3 = require('./footer/index');
+var index_2 = require('./footer/index');
 var app_routing_1 = require('./app.routing');
-var index_4 = require('./_guards/index');
-var index_5 = require('./_services/index');
-var index_6 = require('./login/index');
-var index_7 = require('./signup/index');
-var index_8 = require('./home/index');
-/* Feature Modules */
-// import { ProductModule } from './products/product.module';
+var index_3 = require('./_guards/index');
+var index_4 = require('./_services/index');
+var index_5 = require('./login/index');
+var index_6 = require('./signup/index');
+var index_7 = require('./home/index');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -43,17 +40,16 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                index_6.LoginComponent,
+                index_5.LoginComponent,
                 index_1.HeaderComponent,
-                index_2.MenuComponent,
-                index_3.FooterComponent,
-                index_7.SignUpComponent,
-                index_8.WelcomeComponent
+                index_2.FooterComponent,
+                index_6.SignUpComponent,
+                index_7.WelcomeComponent
             ],
             providers: [
-                index_4.AuthGuard,
-                index_5.AuthenticationService,
-                index_5.UserService
+                index_3.AuthGuard,
+                index_4.AuthenticationService,
+                index_4.UserService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

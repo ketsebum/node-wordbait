@@ -23,6 +23,28 @@ var LoginComponent = (function () {
     LoginComponent.prototype.ngOnInit = function () {
         // reset login status
         this.authenticationService.logout();
+        var googleUser = {};
+        var startApp = function () {
+            gapi.load('auth2', function () {
+                // Retrieve the singleton for the GoogleAuth library and set up the client.
+                auth2 = gapi.auth2.init({
+                    client_id: '1066114691418-nm0p4krul7jenj0vck20glcrh23nm1lm.apps.googleusercontent.com',
+                    cookiepolicy: 'single_host_origin',
+                });
+                attachSignin(document.getElementById('customBtn'));
+            });
+        };
+    };
+    LoginComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        gapi.signin2.render('my-signin2', {
+            'scope': 'profile email',
+            'width': 240,
+            'height': 50,
+            'longtitle': true,
+            'theme': 'light',
+            'onsuccess': function (param) { return _this.onSignIn(param); }
+        });
     };
     LoginComponent.prototype.signUp = function () {
         this.router.navigate(['/signup']);
@@ -45,6 +67,15 @@ var LoginComponent = (function () {
     LoginComponent.prototype.authenticate = function (type) {
         if (type === 'google') {
         }
+    };
+    LoginComponent.prototype.attachSignin = function (element) {
+        console.log(element.id);
+        auth2.attachClickHandler(element, {}, function (googleUser) {
+            document.getElementById('name').innerText = "Signed in: " +
+                googleUser.getBasicProfile().getName();
+        }, function (error) {
+            alert(JSON.stringify(error, undefined, 2));
+        });
     };
     __decorate([
         core_1.Output(), 

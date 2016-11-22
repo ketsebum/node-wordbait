@@ -21,10 +21,13 @@
         <div *ngIf="error" class="alert alert-danger">{{error}}</div>
       </form>
       <button [disabled]="loading" (click)="signUp()" class="btn btn-success">Sign Up</button>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
       <div class="hr-title">
         <span>or</span>
       </div>
+
       <div class="btn-toolbar text-center">
+        <div id="my-signin2"></div>
         <button class="btn btn-google" (click)="authenticate('google')">Sign in with Google</button>
       </div>
     </div>

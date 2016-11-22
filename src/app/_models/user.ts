@@ -4,4 +4,5 @@ export class User {
     role_id: number;
     email: string;
     name: string;
+    token: string;
 }
