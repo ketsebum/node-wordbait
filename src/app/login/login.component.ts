@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
         });
     }
 
-    public onSignIn(googleUser) {
+    onSignIn(googleUser) {
         let user : User = new User();
         this.object.user = new User();
 
@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('currentUser', JSON.stringify(this.object));
         // this.loggingIn.emit(true);
         this.router.navigate(['/']);
-    };
+    }
 
     signUp() {
         this.router.navigate(['/signup']);
