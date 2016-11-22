@@ -11,6 +11,7 @@ import {AuthenticationService} from '../_services/index';
 export class LoginComponent implements OnInit {
     @Output() loggingIn = new EventEmitter<boolean>();
     model: any = {};
+    object: any = {};
     loading = false;
     error = '';
 
@@ -49,6 +50,7 @@ export class LoginComponent implements OnInit {
 
     public onSignIn(googleUser) {
         let user : User = new User();
+        this.object.user = new User();
 
         ((u, p) => {
             u.id            = p.getId();
@@ -57,14 +59,14 @@ export class LoginComponent implements OnInit {
             // u.imageUrl      = p.getImageUrl();
             // u.givenName     = p.getGivenName();
             // u.familyName    = p.getFamilyName();
-        })(user, googleUser.getBasicProfile());
+        })(this.object.user, googleUser.getBasicProfile());
 
         ((u, r) => {
             u.token         = r.id_token
-        })(user, googleUser.getAuthResponse());
+        })(this.object, googleUser.getAuthResponse());
 
         // user.save();
-        localStorage.setItem('currentUser', JSON.stringify(user));
+        localStorage.setItem('currentUser', JSON.stringify(this.object));
         // this.loggingIn.emit(true);
         this.router.navigate(['/']);
     };
